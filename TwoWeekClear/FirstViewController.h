@@ -1,5 +1,5 @@
 //
-//  FristBtnViewController.h
+//  FirstViewController.h
 //  TwoWeekClear
 //
 //  Created by SDT-1 on 2014. 1. 22..
@@ -8,8 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FristBtnViewController : UIViewController
-@property  BOOL flipped;
-- (void) flipCard;
-- (void) reverseCard;
+@interface FirstViewController : UIViewController
 @end

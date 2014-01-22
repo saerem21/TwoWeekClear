@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+@property  BOOL flipped;
+@property  BOOL flipped2;
+- (void) flipCard;
+- (void) reverseCard;
 @end

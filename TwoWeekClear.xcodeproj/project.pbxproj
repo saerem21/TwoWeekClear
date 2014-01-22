@@ -21,7 +21,12 @@
 		004201BE188F523600A7FEF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004201A0188F523600A7FEF8 /* UIKit.framework */; };
 		004201C6188F523600A7FEF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 004201C4188F523600A7FEF8 /* InfoPlist.strings */; };
 		004201C8188F523600A7FEF8 /* TwoWeekClearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201C7188F523600A7FEF8 /* TwoWeekClearTests.m */; };
-		004201D3188F547D00A7FEF8 /* FristBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201D2188F547D00A7FEF8 /* FristBtnViewController.m */; };
+		004201D6188F5AB400A7FEF8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201D5188F5AB400A7FEF8 /* FirstViewController.m */; };
+		004201EC188F6E7A00A7FEF8 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201EB188F6E7A00A7FEF8 /* OrderCell.m */; };
+		004201EF188F715A00A7FEF8 /* Plan.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201EE188F715A00A7FEF8 /* Plan.m */; };
+		004201F1188F746E00A7FEF8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 004201F0188F746E00A7FEF8 /* libsqlite3.dylib */; };
+		004201F3188F7D0500A7FEF8 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004201F2188F7D0500A7FEF8 /* db.sqlite */; };
+		004201F6188F7DD300A7FEF8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201F5188F7DD300A7FEF8 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +59,16 @@
 		004201C3188F523600A7FEF8 /* TwoWeekClearTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwoWeekClearTests-Info.plist"; sourceTree = "<group>"; };
 		004201C5188F523600A7FEF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		004201C7188F523600A7FEF8 /* TwoWeekClearTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoWeekClearTests.m; sourceTree = "<group>"; };
-		004201D1188F547D00A7FEF8 /* FristBtnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FristBtnViewController.h; sourceTree = "<group>"; };
-		004201D2188F547D00A7FEF8 /* FristBtnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FristBtnViewController.m; sourceTree = "<group>"; };
+		004201D4188F5AB400A7FEF8 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		004201D5188F5AB400A7FEF8 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		004201EA188F6E7A00A7FEF8 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		004201EB188F6E7A00A7FEF8 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		004201ED188F715A00A7FEF8 /* Plan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plan.h; sourceTree = "<group>"; };
+		004201EE188F715A00A7FEF8 /* Plan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plan.m; sourceTree = "<group>"; };
+		004201F0188F746E00A7FEF8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		004201F2188F7D0500A7FEF8 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		004201F4188F7DD300A7FEF8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		004201F5188F7DD300A7FEF8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004201F1188F746E00A7FEF8 /* libsqlite3.dylib in Frameworks */,
 				0042019F188F523600A7FEF8 /* CoreGraphics.framework in Frameworks */,
 				004201A1188F523600A7FEF8 /* UIKit.framework in Frameworks */,
 				0042019D188F523600A7FEF8 /* Foundation.framework in Frameworks */,
@@ -104,6 +118,7 @@
 		0042019B188F523600A7FEF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				004201F0188F746E00A7FEF8 /* libsqlite3.dylib */,
 				0042019C188F523600A7FEF8 /* Foundation.framework */,
 				0042019E188F523600A7FEF8 /* CoreGraphics.framework */,
 				004201A0188F523600A7FEF8 /* UIKit.framework */,
@@ -115,6 +130,9 @@
 		004201A2188F523600A7FEF8 /* TwoWeekClear */ = {
 			isa = PBXGroup;
 			children = (
+				004201F2188F7D0500A7FEF8 /* db.sqlite */,
+				004201EA188F6E7A00A7FEF8 /* OrderCell.h */,
+				004201EB188F6E7A00A7FEF8 /* OrderCell.m */,
 				004201AB188F523600A7FEF8 /* AppDelegate.h */,
 				004201AC188F523600A7FEF8 /* AppDelegate.m */,
 				004201AE188F523600A7FEF8 /* Main.storyboard */,
@@ -122,8 +140,12 @@
 				004201B2188F523600A7FEF8 /* ViewController.m */,
 				004201B4188F523600A7FEF8 /* Images.xcassets */,
 				004201A3188F523600A7FEF8 /* Supporting Files */,
-				004201D1188F547D00A7FEF8 /* FristBtnViewController.h */,
-				004201D2188F547D00A7FEF8 /* FristBtnViewController.m */,
+				004201D4188F5AB400A7FEF8 /* FirstViewController.h */,
+				004201D5188F5AB400A7FEF8 /* FirstViewController.m */,
+				004201ED188F715A00A7FEF8 /* Plan.h */,
+				004201EE188F715A00A7FEF8 /* Plan.m */,
+				004201F4188F7DD300A7FEF8 /* SecondViewController.h */,
+				004201F5188F7DD300A7FEF8 /* SecondViewController.m */,
 			);
 			path = TwoWeekClear;
 			sourceTree = "<group>";
@@ -236,6 +258,7 @@
 				004201B5188F523600A7FEF8 /* Images.xcassets in Resources */,
 				004201A7188F523600A7FEF8 /* InfoPlist.strings in Resources */,
 				004201B0188F523600A7FEF8 /* Main.storyboard in Resources */,
+				004201F3188F7D0500A7FEF8 /* db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +279,11 @@
 			files = (
 				004201B3188F523600A7FEF8 /* ViewController.m in Sources */,
 				004201AD188F523600A7FEF8 /* AppDelegate.m in Sources */,
-				004201D3188F547D00A7FEF8 /* FristBtnViewController.m in Sources */,
+				004201D6188F5AB400A7FEF8 /* FirstViewController.m in Sources */,
+				004201F6188F7DD300A7FEF8 /* SecondViewController.m in Sources */,
 				004201A9188F523600A7FEF8 /* main.m in Sources */,
+				004201EF188F715A00A7FEF8 /* Plan.m in Sources */,
+				004201EC188F6E7A00A7FEF8 /* OrderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
