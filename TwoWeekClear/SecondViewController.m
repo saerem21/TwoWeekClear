@@ -45,6 +45,13 @@
             NSAssert1(SQLITE_OK == ret, @"Error on creating table : %s", errorMsg);
             NSLog(@"creating table with ret : %d", ret);
         }
+        creatSQL = "CREATE TABLE IF NOT EXISTS DOIT (content TEXT,year TEXT,month TEXT,day TEXT,cellNum)";
+        ret = sqlite3_exec(db, creatSQL, NULL, NULL, &errorMsg);
+        if (SQLITE_OK != ret) {
+            [fm removeItemAtPath:dbFilePath error:nil];
+            NSAssert1(SQLITE_OK == ret, @"Error on creating table : %s", errorMsg);
+            NSLog(@"creating table with ret : %d", ret);
+        }
     }
 }
 

@@ -61,6 +61,13 @@
             NSAssert1(SQLITE_OK == ret, @"Error on creating table : %s", errorMsg);
             NSLog(@"creating table with ret : %d", ret);
         }
+        creatSQL = "CREATE TABLE IF NOT EXISTS DOIT (content TEXT,year TEXT,month TEXT,day TEXT,cellNum)";
+        ret = sqlite3_exec(db, creatSQL, NULL, NULL, &errorMsg);
+        if (SQLITE_OK != ret) {
+            [fm removeItemAtPath:dbFilePath error:nil];
+            NSAssert1(SQLITE_OK == ret, @"Error on creating table : %s", errorMsg);
+            NSLog(@"creating table with ret : %d", ret);
+        }
     }
 }
 
@@ -75,6 +82,15 @@
     Plan *one=[data objectAtIndex:0];
     NSLog(@"%d", one.numberText);
 }
+
+- (BOOL)isEnd{
+    NSString *queryStr = @"SELECT rowid FROM PLAN WHERE rowid = ";
+    sqlite3_stmt *stmt;
+    int ret = sqlite3_prepare_v2(db, [queryStr UTF8String], -1, &stmt, NULL);
+    
+    return YES;
+}
+
 
 - (void)resolveData
 {
@@ -168,7 +184,16 @@
     
     if(one.onOff == NO){
         sql = [NSString stringWithFormat:@"UPDATE PLAN SET onOff = '%d' WHERE rowid = %d",1,indexPath.row+1];
-        NSLog(@"%@",sql);
+        
+        NSString *sqla = [NSString stringWithFormat:@"INSERT INTO DOIT (content,year,month,day) VALUES ('%@','%d','%d','%d')",one.textContent,one.year,one.month,one.day];
+        
+        char *errorMsg;
+        int ret = sqlite3_exec(db, [sqla UTF8String], NULL, NULL, &errorMsg);
+        
+        if (SQLITE_OK != ret) {
+            NSLog(@"Error (%d) on intsert data : %s", ret, errorMsg);
+        }
+
     }else{
         sql = [NSString stringWithFormat:@"UPDATE PLAN SET onOff = '%d' WHERE rowid = %d",0,indexPath.row+1];
         NSLog(@"%@",sql);
