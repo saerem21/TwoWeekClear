@@ -37,7 +37,7 @@
     NSLog(@"Success");
     
     if (existFile == NO) {
-        const char *creatSQL = "CREATE TABLE IF NOT EXISTS PLAN (content TEXT,doNum INTEGER,createAtDate TEXT,onOff INTEGER)";
+        const char *creatSQL = "CREATE TABLE IF NOT EXISTS PLAN (content TEXT,doNum INTEGER,createAtDate TEXT,onOff INTEGER,year TEXT,month TEXT,day TEXT)";
         char *errorMsg;
         ret = sqlite3_exec(db, creatSQL, NULL, NULL, &errorMsg);
         if (SQLITE_OK != ret) {
@@ -64,13 +64,25 @@
     
     NSDate *now = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy년 MM월 dd일";
+    
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
-    NSString *makedate = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:now]];
+    dateFormatter.dateFormat = @"yyyy";
+    NSString *year = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:now]];
+    dateFormatter.dateFormat = @"MM";
+    NSString *month = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:now]];
+    dateFormatter.dateFormat = @"dd";
+    NSString *day = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:now]];
+   
+    
+    NSString *makedate = [NSString stringWithFormat:@"%@ year %@ month %@ day",year,month,day];
+    
+    
+    
+    
     
     NSLog(@"The Current Time is %@",[dateFormatter stringFromDate:now]);
     
-    NSString *sql = [NSString stringWithFormat:@"INSERT INTO PLAN (content,doNum,createAtDate,onOff) VALUES ('%@','%d','%@',%d)", content.text,doNum,makedate,0];
+    NSString *sql = [NSString stringWithFormat:@"INSERT INTO PLAN (content,doNum,createAtDate,onOff,year,month,day) VALUES ('%@','%d','%@',%d,'%@','%@','%@')", content.text,doNum,makedate,0,year,month,day];
     
     char *errorMsg;
     int ret = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errorMsg);

@@ -53,7 +53,7 @@
     NSLog(@"Success");
     
     if (existFile == NO) {
-        const char *creatSQL = "CREATE TABLE IF NOT EXISTS PLAN (content TEXT,doNum TEXT,createAtDate TEXT,onOff INTEGER)";
+        const char *creatSQL = "CREATE TABLE IF NOT EXISTS PLAN (content TEXT,doNum INTEGER,createAtDate TEXT,onOff INTEGER,year TEXT,month TEXT,day TEXT)";
         char *errorMsg;
         ret = sqlite3_exec(db, creatSQL, NULL, NULL, &errorMsg);
         if (SQLITE_OK != ret) {
@@ -92,8 +92,14 @@
         int doNum = (int)sqlite3_column_int(stmt, 2);
         char *createAtDate = (char *)sqlite3_column_text(stmt, 3);
         int onOff = (int)sqlite3_column_int(stmt, 4);
-        
+        int year = (int)sqlite3_column_int(stmt, 5);
+        int month = (int)sqlite3_column_int(stmt, 6);
+        int day = (int)sqlite3_column_int(stmt, 7);
         Plan *one = [[Plan alloc] init];
+        
+        one.year =year;
+        one.month = month;
+        one.day =day;
         
         one.rowID = rowID;
         NSString *arr = [NSString stringWithFormat:@"%s",content];

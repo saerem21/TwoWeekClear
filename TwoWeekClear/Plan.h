@@ -14,5 +14,7 @@
 @property BOOL onOff;
 @property NSString *createAtDate;
 @property int rowID;
-
+@property int year;
+@property int month;
+@property int day;
 @end
