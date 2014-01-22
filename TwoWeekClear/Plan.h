@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Plan : NSObject
-@property char *textContent;
+@property NSString *textContent;
 @property int numberText;
 @property BOOL onOff;
 @property char *createAtDate;

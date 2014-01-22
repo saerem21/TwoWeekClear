@@ -75,7 +75,9 @@
         Plan *one = [[Plan alloc] init];
         
         one.rowID = rowID;
-        one.textContent = content;
+        NSString *arr = [NSString stringWithFormat:@"%s",content];
+        
+        one.textContent = arr;
         one.numberText =doNum;
         one.createAtDate = createAtDate;
         
@@ -112,12 +114,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     OrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
-    //cell =[data objectAtIndex:indexPath.row];
+    Plan *one=[data objectAtIndex:indexPath.row];
     NSLog(@"%@",[data objectAtIndex:indexPath.row]);
     
-    cell.textContent.text = @"a";
-    cell.numberText.text =@"11";
-    cell.onOff.on = NO;
+    cell.textContent.text = one.textContent;
+    NSString *numcre = [NSString stringWithFormat:@"%d",one.numberText];
+    cell.numberText.text =numcre;
+    cell.onOff.on = one.onOff;
     return cell;
 }
 
