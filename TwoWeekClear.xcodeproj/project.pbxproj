@@ -21,6 +21,7 @@
 		004201BE188F523600A7FEF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004201A0188F523600A7FEF8 /* UIKit.framework */; };
 		004201C6188F523600A7FEF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 004201C4188F523600A7FEF8 /* InfoPlist.strings */; };
 		004201C8188F523600A7FEF8 /* TwoWeekClearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201C7188F523600A7FEF8 /* TwoWeekClearTests.m */; };
+		004201D3188F547D00A7FEF8 /* FristBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004201D2188F547D00A7FEF8 /* FristBtnViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		004201C3188F523600A7FEF8 /* TwoWeekClearTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwoWeekClearTests-Info.plist"; sourceTree = "<group>"; };
 		004201C5188F523600A7FEF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		004201C7188F523600A7FEF8 /* TwoWeekClearTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoWeekClearTests.m; sourceTree = "<group>"; };
+		004201D1188F547D00A7FEF8 /* FristBtnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FristBtnViewController.h; sourceTree = "<group>"; };
+		004201D2188F547D00A7FEF8 /* FristBtnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FristBtnViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				004201B2188F523600A7FEF8 /* ViewController.m */,
 				004201B4188F523600A7FEF8 /* Images.xcassets */,
 				004201A3188F523600A7FEF8 /* Supporting Files */,
+				004201D1188F547D00A7FEF8 /* FristBtnViewController.h */,
+				004201D2188F547D00A7FEF8 /* FristBtnViewController.m */,
 			);
 			path = TwoWeekClear;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			files = (
 				004201B3188F523600A7FEF8 /* ViewController.m in Sources */,
 				004201AD188F523600A7FEF8 /* AppDelegate.m in Sources */,
+				004201D3188F547D00A7FEF8 /* FristBtnViewController.m in Sources */,
 				004201A9188F523600A7FEF8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
