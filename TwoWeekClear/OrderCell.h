@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PlanDelegate.h"
 @interface OrderCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UITextView *textContent;
-@property (weak, nonatomic) IBOutlet UILabel *numberText;
 @property (weak, nonatomic) IBOutlet UISwitch *onOff;
-@property (weak, nonatomic) IBOutlet UIButton *upBtn;
-@property (weak, nonatomic) IBOutlet UIButton *downBtn;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+
+@property (weak, nonatomic)id<PlanDelegate> delegate;
 
 @end

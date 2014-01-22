@@ -12,7 +12,7 @@
 @property NSString *textContent;
 @property int numberText;
 @property BOOL onOff;
-@property char *createAtDate;
+@property NSString *createAtDate;
 @property int rowID;
 
 @end

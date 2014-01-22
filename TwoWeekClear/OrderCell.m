@@ -9,11 +9,6 @@
 #import "OrderCell.h"
 
 @implementation OrderCell
-- (IBAction)upPress:(id)sender {
-    NSLog(@"up press");
-}
-- (IBAction)downPress:(id)sender {
-    NSLog(@"down press");
-}
+
 
 @end

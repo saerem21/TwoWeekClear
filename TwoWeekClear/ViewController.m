@@ -48,7 +48,7 @@
         
         layer.transform = rotationAndPerspectiveTransform;
     };
-    [UIView animateWithDuration:1.28
+    [UIView animateWithDuration:0.28
                           delay:0.0
                         options: UIViewAnimationCurveEaseInOut
                      animations:animationsBlock
@@ -79,7 +79,7 @@
         
         layer.transform = rotationAndPerspectiveTransform;
     };
-    [UIView animateWithDuration:1.28
+    [UIView animateWithDuration:0.28
                           delay:0.0
                         options: UIViewAnimationCurveEaseInOut
                      animations:animationsBlock
@@ -92,7 +92,7 @@
     NSLog(@"press");
     if (self.flipped == NO) {
         [self flipCard];
-        [self performSelector:@selector(jumpView) withObject:nil afterDelay:1.28];
+        [self performSelector:@selector(jumpView) withObject:nil afterDelay:0.28];
     }
     else{
         self.front.alpha = 1.0f;
@@ -104,7 +104,7 @@
 
 - (IBAction)btn2Press:(id)sender {
     [self flipCard1];
-    [self performSelector:@selector(jumpView2) withObject:nil afterDelay:1.28];
+    [self performSelector:@selector(jumpView2) withObject:nil afterDelay:0.28];
 }
 
 

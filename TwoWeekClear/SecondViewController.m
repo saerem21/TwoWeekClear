@@ -8,8 +8,11 @@
 
 #import "SecondViewController.h"
 #import <sqlite3.h>
+#import "ViewController.h"
 
 @interface SecondViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *contentText;
+@property (weak, nonatomic) IBOutlet UILabel *dateView;
 
 @end
 
@@ -56,12 +59,18 @@
 
    
     
-    UITextField *content;
+    UITextView *content = self.contentText;
     int doNum = 0 ;
-    NSDate *date = [NSDate date];
     
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy년 MM월 dd일";
+    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    NSString *makedate = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:now]];
     
-    NSString *sql = [NSString stringWithFormat:@"INSERT INTO PLAN (content,doNum,createAtDate,onOff) VALUES ('%@','%d','%@',%d)", content.text,doNum,date,1];
+    NSLog(@"The Current Time is %@",[dateFormatter stringFromDate:now]);
+    
+    NSString *sql = [NSString stringWithFormat:@"INSERT INTO PLAN (content,doNum,createAtDate,onOff) VALUES ('%@','%d','%@',%d)", content.text,doNum,makedate,0];
     
     char *errorMsg;
     int ret = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errorMsg);
@@ -72,12 +81,6 @@
     
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == alertView.firstOtherButtonIndex){
-        
-           }
-}
-
 
 
 - (void)viewDidLoad
@@ -85,6 +88,13 @@
     [super viewDidLoad];
 	data = [NSMutableArray array];
     [self openDB];
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy년 MM월 dd일";
+    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    NSString *makedate = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:now]];
+    self.dateView.text = makedate;
 }
 
 - (void)viewDidUnload

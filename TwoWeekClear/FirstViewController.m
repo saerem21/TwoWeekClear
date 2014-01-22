@@ -24,6 +24,22 @@
 @implementation FirstViewController
 
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (UITableViewCellEditingStyleDelete == editingStyle) {
+        Plan *one = [data objectAtIndex:indexPath.row];
+        NSString *sql = [NSString stringWithFormat:@"DELETE FROM PLAN WHERE rowid = %d", one.rowID];
+        
+        char *errorMsg;
+        int ret = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errorMsg);
+        
+        if (SQLITE_OK != ret) {
+            NSLog(@"Error (%d) on deleting data : %s", ret, errorMsg);
+        }
+        [self resolveData];
+    }
+}
+
 - (void)openDB
 {
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -54,6 +70,11 @@
     sqlite3_close(db);
 }
 
+- (IBAction)test:(id)sender {
+    
+    Plan *one=[data objectAtIndex:0];
+    NSLog(@"%d", one.numberText);
+}
 
 - (void)resolveData
 {
@@ -79,12 +100,15 @@
         
         one.textContent = arr;
         one.numberText =doNum;
-        one.createAtDate = createAtDate;
+        
+        NSLog(@"table %s",createAtDate);
+        NSString *arre = [NSString stringWithFormat:@"%s",createAtDate];
+        one.createAtDate = arre;
         
         if(onOff == 1){
             one.onOff = YES;
         }
-        else{
+        else if(onOff == 0){
             one.onOff = NO;
         }
         
@@ -115,16 +139,44 @@
     
     OrderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
     Plan *one=[data objectAtIndex:indexPath.row];
-    NSLog(@"%@",[data objectAtIndex:indexPath.row]);
-    
+        //NSDate *datecon = one.createAtDate;
+    //cell.date =
+    NSString *datecre = one.createAtDate;
+    //NSLog(@"%@",one.createAtDate);
+    cell.date.text = datecre;
     cell.textContent.text = one.textContent;
-    NSString *numcre = [NSString stringWithFormat:@"%d",one.numberText];
-    cell.numberText.text =numcre;
+    
+    
     cell.onOff.on = one.onOff;
+    
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    Plan *one=[data objectAtIndex:indexPath.row];
+    NSString *sql;
+    
+    NSLog(@"onoff %d",one.onOff);
+    NSLog(@"selected cell %d",indexPath.row);
+    
+    if(one.onOff == NO){
+        sql = [NSString stringWithFormat:@"UPDATE PLAN SET onOff = '%d' WHERE rowid = %d",1,indexPath.row+1];
+        NSLog(@"%@",sql);
+    }else{
+        sql = [NSString stringWithFormat:@"UPDATE PLAN SET onOff = '%d' WHERE rowid = %d",0,indexPath.row+1];
+        NSLog(@"%@",sql);
+    }
+    
+    char *errorMsg;
+    int ret = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errorMsg);
+    
+    if (SQLITE_OK != ret) {
+        NSLog(@"Error (%d) on update data : %s", ret, errorMsg);
+    }
+    [self resolveData];
+    
+}
 
 
 

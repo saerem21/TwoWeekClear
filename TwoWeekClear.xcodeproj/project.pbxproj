@@ -69,6 +69,7 @@
 		004201F2188F7D0500A7FEF8 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		004201F4188F7DD300A7FEF8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		004201F5188F7DD300A7FEF8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		004201F7188F98C100A7FEF8 /* PlanDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +147,7 @@
 				004201EE188F715A00A7FEF8 /* Plan.m */,
 				004201F4188F7DD300A7FEF8 /* SecondViewController.h */,
 				004201F5188F7DD300A7FEF8 /* SecondViewController.m */,
+				004201F7188F98C100A7FEF8 /* PlanDelegate.h */,
 			);
 			path = TwoWeekClear;
 			sourceTree = "<group>";
